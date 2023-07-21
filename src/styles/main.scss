@@ -1,3 +1,7 @@
+$font-raleway: "Raleway", sans-serif;
+$font-open-sans: "Open Sans", sans-serif;
+
+
 $color-primary: #08A6E4;
 $color-primary-shadow: rgba(7, 172, 230, .16);
 $color-redish: #FB3B64;
@@ -11,8 +15,13 @@ $color-light-grey: #F7F7F7;
     @content;
   }
 }
+body {
+  font-family: $font-open-sans;
+}
 
-
+/**
+ * Calculator Section
+ */
 .calc {
   padding: 80px 0;
   background-color: $color-light-grey;
@@ -80,13 +89,14 @@ $color-light-grey: #F7F7F7;
 
       &::after {
         content: "";
-        background-image: url("../../../Kalkulatorek/assets/Arrow.svg");
+        background-image: url("../../assets/Arrow.svg");
         width: 22px;
         height: 22px;
         display: block;
         position: absolute;
         right: 14px;
         top: 9px;
+
       }
     }
 
@@ -95,15 +105,20 @@ $color-light-grey: #F7F7F7;
       position: absolute;
       z-index: 1;
       background-color: white;
-      width: 100%;
+      width: 448px;
       border-radius: 6px;
       border: 1px solid $color-redish;
       overflow: hidden;
+      margin-top: 0;
+      list-style-type: none;
+      padding-left: 5px;
+      transform: translateY(-10px);
 
       li {
         font-size: 13px;
         padding: 10px 20px;
         cursor: pointer;
+        padding-left: 10px;
 
         &:hover {
           background-color: $color-light-grey;
@@ -142,7 +157,7 @@ $color-light-grey: #F7F7F7;
     }
 
     .summary__total,
-    .list__item {
+    .list__item{
       box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
       border-radius: 6px;
       justify-content: space-between;
@@ -182,4 +197,13 @@ $color-light-grey: #F7F7F7;
       }
     }
   }
+}
+.select__input.rotated::after {
+  transform: rotate(180deg); // Obraca element o 90 stopni
+
+}
+
+.calc__summary{
+
+  transform: translateY(-14px);
 }
